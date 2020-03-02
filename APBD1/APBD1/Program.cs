@@ -27,21 +27,9 @@ namespace APBD1
             {
                 var response = await _httpClient.GetAsync(args[0]);
                 var content = await response.Content.ReadAsStringAsync();
-
                 var matches = Regex.Matches(content, @"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", RegexOptions.IgnoreCase);
-
-                if (matches.Count == 0)
-                {
-                    Console.WriteLine("Nie znaleziono adresów email.");
-                }
-                else
-                {
-                    Console.WriteLine("Znalezione adresy:");
-                    foreach (var email in matches)
-                    {
-                        Console.WriteLine(email);
-                    }
-                }
+                var addresses = matches.Select(x => x.Value).Distinct().ToList();
+                PrintAddresses(addresses);
             }
             catch (Exception e)
             {
@@ -50,6 +38,22 @@ namespace APBD1
             finally
             {
                 _httpClient.Dispose();
+            }
+        }
+
+        private static void PrintAddresses(List<string> addresses)
+        {
+            if (addresses.Count == 0)
+            {
+                Console.WriteLine("Nie znaleziono adresów email.");
+            }
+            else
+            {
+                Console.WriteLine("Znalezione adresy:");
+                foreach (var email in addresses)
+                {
+                    Console.WriteLine(email);
+                }
             }
         }
     }
