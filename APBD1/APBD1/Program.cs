@@ -13,25 +13,43 @@ namespace APBD1
 
         static async Task Main(string[] args)
         {
-            Console.Write("URL: ");
-            var address = Console.ReadLine();
+            if (args.Length == 0)
+            {
+                throw new ArgumentNullException();
+            }
+
+            if (!Uri.IsWellFormedUriString(args[0], UriKind.Absolute))
+            {
+                throw new ArgumentException();
+            }
 
             try
             {
-                var response = await _httpClient.GetAsync(address);
+                var response = await _httpClient.GetAsync(args[0]);
                 var content = await response.Content.ReadAsStringAsync();
 
                 var matches = Regex.Matches(content, @"\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", RegexOptions.IgnoreCase);
 
-                Console.WriteLine("Found addresses:");
-                foreach(var email in matches)
+                if (matches.Count == 0)
                 {
-                    Console.WriteLine(email);
+                    Console.WriteLine("Nie znaleziono adresów email.");
+                }
+                else
+                {
+                    Console.WriteLine("Znalezione adresy:");
+                    foreach (var email in matches)
+                    {
+                        Console.WriteLine(email);
+                    }
                 }
             }
             catch (Exception e)
             {
-                Console.WriteLine(e.Message);
+                Console.WriteLine("Błąd w czasie pobierania strony.");
+            }
+            finally
+            {
+                _httpClient.Dispose();
             }
         }
     }
