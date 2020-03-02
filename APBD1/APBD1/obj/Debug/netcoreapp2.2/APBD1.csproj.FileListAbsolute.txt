@@ -1,0 +1,11 @@
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\bin\Debug\netcoreapp2.2\APBD1.deps.json
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\bin\Debug\netcoreapp2.2\APBD1.runtimeconfig.json
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\bin\Debug\netcoreapp2.2\APBD1.runtimeconfig.dev.json
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\bin\Debug\netcoreapp2.2\APBD1.dll
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\bin\Debug\netcoreapp2.2\APBD1.pdb
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\obj\Debug\netcoreapp2.2\APBD1.csprojAssemblyReference.cache
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\obj\Debug\netcoreapp2.2\APBD1.csproj.CoreCompileInputs.cache
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\obj\Debug\netcoreapp2.2\APBD1.AssemblyInfoInputs.cache
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\obj\Debug\netcoreapp2.2\APBD1.AssemblyInfo.cs
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\obj\Debug\netcoreapp2.2\APBD1.dll
+Z:\Semestr 4\APBD\cw1\APBD1\APBD1\obj\Debug\netcoreapp2.2\APBD1.pdb
